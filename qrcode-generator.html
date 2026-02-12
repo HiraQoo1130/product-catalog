@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRコード生成 - メンズピアス商品紹介</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        #qrcode {
+            display: inline-block;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .url-display {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            word-break: break-all;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .instructions {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .instructions h3 {
+            color: #1976D2;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            color: #555;
+        }
+        
+        .instructions li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .note {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3cd;
+            border-radius: 10px;
+            color: #856404;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 QRコード生成</h1>
+        <p class="subtitle">メンズピアス商品紹介ページ</p>
+        
+        <div id="qrcode"></div>
+        
+        <div class="url-display">
+            <strong>リンク先URL:</strong><br>
+            <span id="url-text"></span>
+        </div>
+        
+        <button class="download-btn" onclick="downloadQRCode()">
+            QRコードをダウンロード
+        </button>
+        
+        <div class="instructions">
+            <h3>📋 GitHub Pagesでの公開手順</h3>
+            <ol>
+                <li><strong>リポジトリを作成:</strong> GitHubで新しいリポジトリを作成</li>
+                <li><strong>ファイルをアップロード:</strong> 「mens-pierce-products.html」をリポジトリにアップロード</li>
+                <li><strong>GitHub Pagesを有効化:</strong> Settings → Pages → Source を「main」ブランチに設定</li>
+                <li><strong>URLを確認:</strong> 公開されたURL（https://ユーザー名.github.io/リポジトリ名/mens-pierce-products.html）を確認</li>
+                <li><strong>QRコードを更新:</strong> 下記の「URL入力欄」に公開URLを入力してQRコードを再生成</li>
+            </ol>
+        </div>
+        
+        <div class="note">
+            <strong>💡 ヒント:</strong> このページ自体もGitHubにアップロードすることで、いつでもQRコードを再生成できます。
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+            <h3 style="margin-bottom: 15px; color: #333;">🔧 カスタムURL設定</h3>
+            <input type="text" id="custom-url" placeholder="GitHub PagesのURLを入力" 
+                   style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px; margin-bottom: 10px;">
+            <button class="download-btn" onclick="regenerateQRCode()" style="margin-top: 10px;">
+                QRコードを再生成
+            </button>
+        </div>
+    </div>
+    
+    <!-- QRCode.js ライブラリ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <script>
+        // デフォルトURL（ローカルファイルパスまたはGitHub PagesのURL）
+        let currentUrl = window.location.href.replace('qrcode-generator.html', 'mens-pierce-products.html');
+        
+        // QRコードを生成する関数
+        function generateQRCode(url) {
+            // 既存のQRコードをクリア
+            document.getElementById('qrcode').innerHTML = '';
+            
+            // 新しいQRコードを生成
+            new QRCode(document.getElementById('qrcode'), {
+                text: url,
+                width: 256,
+                height: 256,
+                colorDark: '#000000',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.H
+            });
+            
+            // URLを表示
+            document.getElementById('url-text').textContent = url;
+        }
+        
+        // QRコードを再生成
+        function regenerateQRCode() {
+            const customUrl = document.getElementById('custom-url').value.trim();
+            if (customUrl) {
+                currentUrl = customUrl;
+                generateQRCode(currentUrl);
+            } else {
+                alert('URLを入力してください');
+            }
+        }
+        
+        // QRコードをダウンロード
+        function downloadQRCode() {
+            const canvas = document.querySelector('#qrcode canvas');
+            if (canvas) {
+                const link = document.createElement('a');
+                link.download = 'mens-pierce-qrcode.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            } else {
+                alert('QRコードを生成してからダウンロードしてください');
+            }
+        }
+        
+        // ページ読み込み時にQRコードを生成
+        window.onload = function() {
+            generateQRCode(currentUrl);
+        };
+    </script>
+</body>
+</html>
