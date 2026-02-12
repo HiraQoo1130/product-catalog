@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メンズブーツ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        .product-list {
+            padding: 0;
+        }
+        
+        .product-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 30px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .product-item:hover {
+            background-color: #fafafa;
+        }
+        
+        .product-item:last-child {
+            border-bottom: none;
+        }
+        
+        .product-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .product-number {
+            background: #2c3e50;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+        
+        .product-details {
+            margin-left: 47px;
+            margin-bottom: 20px;
+        }
+        
+        .product-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+        
+        .product-catchphrase {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .product-target {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .product-target::before {
+            content: "⇒";
+            margin-right: 8px;
+            color: #999;
+        }
+        
+        .product-rating {
+            font-size: 14px;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+        
+        .stars {
+            color: #ffd700;
+            margin-left: 8px;
+            letter-spacing: 2px;
+        }
+        
+        .product-link {
+            margin-left: 47px;
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            padding: 12px 32px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .product-link:hover {
+            background: #34495e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer-brand {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .footer-tagline {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .footer-note {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #999;
+        }
+        
+        @media (max-width: 600px) {
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .product-item {
+                padding: 25px 20px;
+            }
+            
+            .product-name {
+                font-size: 16px;
+            }
+            
+            .product-price {
+                font-size: 22px;
+            }
+            
+            .product-details {
+                margin-left: 0;
+            }
+            
+            .product-link {
+                margin-left: 0;
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>メンズブーツ</h1>
+        </div>
+        
+        <div class="product-list">
+            <div class="product-item">
+                <div class="product-header">
+                    <span class="product-number">1</span>
+                    <div class="product-name">PADRONE ショート サイドジップ ブーツ</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-price">¥33,300</div>
+                    <div class="product-catchphrase">大人の色気ブーツ</div>
+                    <div class="product-target">きれいめを一段引き上げたい人</div>
+                    <div class="product-rating">おすすめ度：<span class="stars">★★★★★</span></div>
+                </div>
+                <a href="https://a.r10.to/hgYcB3" class="product-link" target="_blank">
+                    商品を見る →
+                </a>
+            </div>
+            
+            <div class="product-item">
+                <div class="product-header">
+                    <span class="product-number">2</span>
+                    <div class="product-name">PADRON サイドゴアブーツ</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-price">¥27,500</div>
+                    <div class="product-catchphrase">静かに格上げ黒革靴</div>
+                    <div class="product-target">社会人の本命を探してる人</div>
+                    <div class="product-rating">おすすめ度：<span class="stars">★★★★★</span></div>
+                </div>
+                <a href="https://room.rakuten.co.jp/room_6872f9db6a/1700367041507281" class="product-link" target="_blank">
+                    商品を見る →
+                </a>
+            </div>
+            
+            <div class="product-item">
+                <div class="product-header">
+                    <span class="product-number">3</span>
+                    <div class="product-name">Clarks Wallabee EVO WP</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-price">¥3,000</div>
+                    <div class="product-catchphrase">雨でも履ける名作</div>
+                    <div class="product-target">天候を気にせず履きたい人</div>
+                    <div class="product-rating">おすすめ度：<span class="stars">★★★★★</span></div>
+                </div>
+                <a href="https://room.rakuten.co.jp/room_6872f9db6a/1700367040475342" class="product-link" target="_blank">
+                    商品を見る →
+                </a>
+            </div>
+            
+            <div class="product-item">
+                <div class="product-header">
+                    <span class="product-number">4</span>
+                    <div class="product-name">Clarks ワラビー ブーツ</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-price">¥16,400</div>
+                    <div class="product-catchphrase">価格で選ぶ王道黒</div>
+                    <div class="product-target">名作を賢く買いたい人</div>
+                    <div class="product-rating">おすすめ度：<span class="stars">★★★★★</span></div>
+                </div>
+                <a href="https://a.r10.to/h5tT3Z" class="product-link" target="_blank">
+                    商品を見る →
+                </a>
+            </div>
+            
+            <div class="product-item">
+                <div class="product-header">
+                    <span class="product-number">5</span>
+                    <div class="product-name">Timberland クラシック ツーアイ ボートシューズ</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-price">¥20,900</div>
+                    <div class="product-catchphrase">大人カジュアル定番</div>
+                    <div class="product-target">スニーカー卒業したい人</div>
+                    <div class="product-rating">おすすめ度：<span class="stars">★★★★☆</span></div>
+                </div>
+                <a href="https://a.r10.to/h5Bxo2" class="product-link" target="_blank">
+                    商品を見る →
+                </a>
+            </div>
+            
+            <div class="product-item">
+                <div class="product-header">
+                    <span class="product-number">6</span>
+                    <div class="product-name">Timberland ウォータープルーフ チャッカ ブーツ</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-price">¥24,200</div>
+                    <div class="product-catchphrase">失敗しない初ブーツ</div>
+                    <div class="product-target">防水もデザインも欲しい人</div>
+                    <div class="product-rating">おすすめ度：<span class="stars">★★★★★</span></div>
+                </div>
+                <a href="https://a.r10.to/h5mKTi" class="product-link" target="_blank">
+                    商品を見る →
+                </a>
+            </div>
+            
+            <div class="product-item">
+                <div class="product-header">
+                    <span class="product-number">7</span>
+                    <div class="product-name">Timberland オールデン ブルック ブーツ</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-price">¥20,020</div>
+                    <div class="product-catchphrase">全天候型黒ブーツ</div>
+                    <div class="product-target">実用性重視で選びたい人</div>
+                    <div class="product-rating">おすすめ度：<span class="stars">★★★★★</span></div>
+                </div>
+                <a href="https://a.r10.to/h5mKTi" class="product-link" target="_blank">
+                    商品を見る →
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-brand">HiraQoo</div>
+            <div class="footer-tagline">
+                センスで選ぶ、外さないギフト🎁<br>
+                誕生日｜記念日｜ちょい贅沢<br>
+                大学生目線で本当に良いモノだけ
+            </div>
+            <div class="footer-note">※ 各リンクは楽天市場の商品ページに移動します</div>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+HTMLファイルの作成が完了しました!
+
+**ファイル名**: `mens-boots.html`
+
+**内容**:
+- カテゴリー: メンズブーツ
+- 商品数: 7商品
+- モノトーンのシンプルで洗練されたデザイン
+- レスポンシブ対応（スマホでも快適に閲覧可能）
+- ホバーエフェクト付き
+
+このHTMLファイルをブラウザで開くと、Instagram用の商品紹介ページとして使用できます。GitHubにアップロードすれば、以下のURLで公開されます:
+```
+https://hiraqoo1130.github.io/product-catalog/mens-boots.html
