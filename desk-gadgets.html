@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>デスクが整うガジェット7選</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        .product-list {
+            padding: 0;
+        }
+        
+        .product-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 30px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .product-item:hover {
+            background-color: #fafafa;
+        }
+        
+        .product-item:last-child {
+            border-bottom: none;
+        }
+        
+        .product-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .product-number {
+            background: #2c3e50;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+        
+        .product-details {
+            margin-left: 47px;
+            margin-bottom: 20px;
+        }
+        
+        .product-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+        
+        .product-catchphrase {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .product-target {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .product-target::before {
+            content: "⇒";
+            margin-right: 8px;
+            color: #999;
+        }
+        
+        .product-rating {
+            font-size: 14px;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+        
+        .stars {
+            color: #ffd700;
+            margin-left: 8px;
+            letter-spacing: 2px;
+        }
+        
+        .product-link {
+            margin-left: 47px;
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            padding: 12px 32px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .product-link:hover {
+            background: #34495e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer-brand {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .footer-tagline {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .footer-note {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #999;
+        }
+        
+        @media (max-width: 600px) {
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .product-item {
+                padding: 25px 20px;
+            }
+            
+            .product-name {
+                font-size: 16px;
+            }
+            
+            .product-price {
+                font-size: 22px;
+            }
+            
+            .product-details {
+                margin-left: 0;
+            }
+            
+            .product-link {
+                margin-left: 0;
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>デスクが整うガジェット7選</h1>
+        </div>
+        
+        <div class="product-list">
+
+            <div class="product-item">
+                <div class="product-header">
+                    <span class="product-number">1</span>
+                    <div class="product-name">BenQ ScreenBar Pro</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-price">¥19,900</div>
+                    <div class="product-catchphrase">目に優しいデスク光源</div>
+                    <div class="product-target">夜に作業する人</div>
+                    <div class="product-rating">おすすめ度：<span class="stars">★★★★★</span></div>
+                </div>
+                <a href="https://a.r10.to/hPEK8R" class="product-link" target="_blank">
+                    商品を見る →
+                </a>
+            </div>
+
+            <div class="product-item">
+                <div class="product-header">
+                    <span class="product-number">2</span>
+                    <div class="product-name">Anker Nano Docking Station (13-in-1, Detachable USB-C Hub)</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-price">¥16,900</div>
+                    <div class="product-catchphrase">配線一本化ハブ</div>
+                    <div class="product-target">ノートPC周りがごちゃつく人</div>
+                    <div class="product-rating">おすすめ度：<span class="stars">★★★★☆</span></div>
+                </div>
+                <a href="https://a.r10.to/h5n1TW" class="product-link" target="_blank">
+                    商品を見る →
+                </a>
+            </div>
+
+            <div class="product-item">
+                <div class="product-header">
+                    <span class="product-number">3</span>
+                    <div class="product-name">ERGOTRON LX Desk Monitor Arm</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-price">¥18,800</div>
+                    <div class="product-catchphrase">机が広がる神アーム</div>
+                    <div class="product-target">デスクを広く使いたい人</div>
+                    <div class="product-rating">おすすめ度：<span class="stars">★★★★★</span></div>
+                </div>
+                <a href="https://a.r10.to/h9ZBoR" class="product-link" target="_blank">
+                    商品を見る →
+                </a>
+            </div>
+
+            <div class="product-item">
+                <div class="product-header">
+                    <span class="product-number">4</span>
+                    <div class="product-name">PHILIPS EVNIA 23.8" 180Hz Gaming Monitor</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-price">¥20,160</div>
+                    <div class="product-catchphrase">滑らか高コスパ画面</div>
+                    <div class="product-target">初めて外部モニターを置く人</div>
+                    <div class="product-rating">おすすめ度：<span class="stars">★★★★☆</span></div>
+                </div>
+                <a href="https://a.r10.to/hPCDGw" class="product-link" target="_blank">
+                    商品を見る →
+                </a>
+            </div>
+
+            <div class="product-item">
+                <div class="product-header">
+                    <span class="product-number">5</span>
+                    <div class="product-name">Logicool MX MASTER 4</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-price">¥21,330</div>
+                    <div class="product-catchphrase">仕事効率を最大化する最上位</div>
+                    <div class="product-target">作業スピードを本気で上げたい人</div>
+                    <div class="product-rating">おすすめ度：<span class="stars">★★★★★</span></div>
+                </div>
+                <a href="https://a.r10.to/hPZmI0" class="product-link" target="_blank">
+                    商品を見る →
+                </a>
+            </div>
+
+            <div class="product-item">
+                <div class="product-header">
+                    <span class="product-number">6</span>
+                    <div class="product-name">atelierCODEL Felt Desk Mat</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-price">¥4,790</div>
+                    <div class="product-catchphrase">音が消えるデスク面</div>
+                    <div class="product-target">タイピング音が気になる人</div>
+                    <div class="product-rating">おすすめ度：<span class="stars">★★★★☆</span></div>
+                </div>
+                <a href="https://a.r10.to/hXOQxg" class="product-link" target="_blank">
+                    商品を見る →
+                </a>
+            </div>
+
+            <div class="product-item">
+                <div class="product-header">
+                    <span class="product-number">7</span>
+                    <div class="product-name">Anker Nano USB-C & HDMI Cable</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-price">¥2,990</div>
+                    <div class="product-catchphrase">変換いらず一本線</div>
+                    <div class="product-target">ノートPCとモニターを直結したい人</div>
+                    <div class="product-rating">おすすめ度：<span class="stars">★★★★☆</span></div>
+                </div>
+                <a href="https://a.r10.to/hPG2f8" class="product-link" target="_blank">
+                    商品を見る →
+                </a>
+            </div>
+
+        </div>
+        
+        <div class="footer">
+            <div class="footer-brand">HiraQoo</div>
+            <div class="footer-tagline">
+                センスで選ぶ、外さないギフト🎁<br>
+                誕生日｜記念日｜ちょい贅沢<br>
+                大学生目線で本当に良いモノだけ
+            </div>
+            <div class="footer-note">※ 各リンクは楽天市場の商品ページに移動します</div>
+        </div>
+    </div>
+</body>
+</html>
